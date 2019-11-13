@@ -16,7 +16,7 @@ sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/ssh
 sed -i 's/#PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 
 echo 修改 " /etc/hosts "
-sed -i 's/127.0.1.1/'192.168.66.139'/g' /etc/hosts
+sed -i 's/127.0.1.1/'$IP'/g' /etc/hosts
 
 echo Host名稱 " /etc/hosts "
 hostname --fqdn
@@ -35,10 +35,10 @@ iface $NET inet manual
 
 auto cloudbr0
 iface cloudbr0 inet dhcp
-    address 192.168.66.139
-    netmask 255.255.255.0
-    gateway 192.168.66.1
-    dns-nameservers 192.168.66.1 8.8.8.8 8.8.4.4
+    address $IP
+    netmask $NETMASK
+    gateway $GATEWAY
+    dns-nameservers $GATEWAY 8.8.8.8 8.8.4.4
     bridge_ports $NET
     bridge_fd 5
     bridge_stp off
