@@ -1,6 +1,6 @@
 IP=192.168.66.139
-DBPASSWORD = j75873648
-PASSWORD = j75873648
+DBPASSWORD=j75873648
+PASSWORD=j75873648
 
 cat >/etc/apt/sources.list.d/cloudstack.list <<EOM
 deb http://cloudstack.apt-get.eu/ubuntu trusty 4.12
